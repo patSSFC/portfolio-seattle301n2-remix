@@ -1,0 +1,108 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-logo {
+  text-align: center;
+}
+
+.l-nav li {
+  display: inline-block;
+  font-size: 150%;
+  margin: 0 3em;
+}
+
+.l-nav li:hover {
+  border-bottom: 2px solid #F4D03F;
+}
+
+.intro-contain h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.copy {
+  max-width: 100%;
+}
+
+.profile-bg-image {
+  background-image: url("../images/profile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  border-radius: 20px;
+  transition: background-image .5s;
+}
+
+.profile-bg-image:hover {
+  background-image: url("../images/profile-color.jpg");
+}
+
+.btn-reveal {
+  margin-right: 10px;
+}
+
+#contact h2 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.l-icon-contain {
+  text-align: center;
+  margin: 0 15px;
+  word-spacing: 40px;
+}
+
+.ion-navicon-round {
+  float: right;
+  display: none;
+}
+
+.l-icon-contain a {
+  transition: color .2s;
+}
+
+.l-icon-contain #facebook:hover {
+  color: #3B5998;
+}
+
+.l-icon-contain #twitter:hover {
+  color: #00ACED;
+}
+
+.l-icon-contain #github:hover {
+  color: #8E44AD;
+}
+
+/*
+***************MEDIA QUERIES*****************
+*/
+
+@media only screen and (max-width: 720px) {
+  .l-nav {
+    display: none;
+  }
+
+  .ion-navicon-round {
+    display: block;
+    clear: both;
+  }
+
+  .l-nav li {
+    display: block;
+    padding: 5px 0;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .l-figure-contain {
+    width: 100%;
+  }
+
+  .l-copy-contain {
+    width: 100%;
+  }
+}

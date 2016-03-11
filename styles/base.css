@@ -1,0 +1,46 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(to left, #73C8A9, #373B44);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+}
+
+section {
+  max-width: 95%;
+  margin: 0 2.5%;
+  border-bottom: 1px solid #F4D03F;
+  padding: 20px 0;
+}
+
+article {
+  padding: 20px 0 20px 0;
+}
+
+h1 {
+  font-size: 300%;
+}
+
+h2 {
+  font-size: 200%;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+span {
+  font-size: 300%;
+}
