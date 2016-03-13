@@ -5,7 +5,7 @@ html {
 body {
   background: linear-gradient(to left, #73C8A9, #373B44);
   font-family: 'Open Sans', sans-serif;
-  font-size: 100%;
+  font-size: 16px;
 }
 
 section {
@@ -19,13 +19,16 @@ article {
   padding: 20px 0 20px 0;
 }
 
+h1, h2 {
+  font-family: 'Laila', serif;
+}
+
 h1 {
-  font-size: 300%;
+  font-size: 350%;
 }
 
 h2 {
-  font-size: 200%;
-  font-weight: 400;
+  font-size: 175%;
 }
 
 p {

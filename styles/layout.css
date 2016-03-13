@@ -11,8 +11,13 @@
   margin: 0 auto;
 }
 
-.l-copy-contain {
+.l-copy-wrap {
   width: 60%;
+  float: right;
+}
+
+.l-copy-contain {
+  width: 100%;
 }
 
 .l-figure-contain {

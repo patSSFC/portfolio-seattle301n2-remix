@@ -12,11 +12,35 @@
 
     <!-- External Libs -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
 
     <!-- External Fonts/Icons -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Laila:700' rel='stylesheet' type='text/css'>
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Templates -->
+
+    <script id="projectTemplate" type="text/x-handlebars-template">
+      <article class="project clearfix" data-category="{{category}}">
+        <h2>{{title}}</h2>
+        <figure class="l-figure-contain push-left">
+          <a href={{projectUrl}} target="_blank">
+            <img src="{{screenshot}}" alt="Screenshot for Travelling Fan">
+          </a>
+          <a href="{{authorUrl}}" id="by-line">By {{author}}</a><br />
+          <span id="publish-date">Published on {{publishedOn}}</span>
+        </figure>
+        <div class="l-copy-wrap">
+          {{{body}}}
+          <a href="#" class="reveal-btn">Read on!</a>
+        </div>
+      </article>
+
+    </script>
+
+
 
     <title>Pat Yolian Design</title>
   </head>
@@ -45,11 +69,11 @@
           <h2>
             Pay Your Dues. <br> Nothing is given, Everything is earned
           </h2>
-          <div class="l-copy-contain push-left">
-            <p class="copy">
+          <div class="l-copy-wrap push-left">
+            <p class="l-copy-contain">
               Hello! My name is Patrick Yolian and I am a Front-End Web Developer.  I started seriously developing websites in November of 2015 and have been striving to become better as a professional with every passing day and every line of code.
             </p>
-            <p class="copy">
+            <p class="l-copy-contain">
               I am fluent in HTML + CSS + JavaScript.  I have experience with jQuery and RWD. I am passionate about learning everyday and am excited by the ever developing (pun intended) technologies and design styles that our vibrant community produces everyday.
             </p>
           </div>
@@ -61,68 +85,7 @@
       </section>
 
     <section id="projects">
-      <article class="project clearfix">
-        <figure class="l-figure-contain push-left">
-          <a href>
-            <img src="images/travellingScreen.png" alt="Screenshot for Travelling Fan">
-          </a>
-        </figure>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!<br><br>
-          <a href="#" class="reveal-btn">Read on!</a>
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-      </article>
 
-      <article class="project clearfix">
-        <figure class="l-figure-contain push-left">
-          <a href>
-            <img src="images/travellingScreen.png" alt="Screenshot for Travelling Fan">
-          </a>
-        </figure>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!<br><br>
-          <a href="#" class="reveal-btn">Read on!</a>
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-      </article>
-
-      <article class="project clearfix">
-        <figure class="l-figure-contain push-left">
-          <a href>
-            <img src="images/travellingScreen.png" alt="Screenshot for Travelling Fan">
-          </a>
-        </figure>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!<br><br>
-          <a href="#" class="reveal-btn">Read on!</a>
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-        <p class="l-copy-contain push-right">
-          This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  It's even responsive! Click on the screenshot and check it out for yourself!
-        </p>
-      </article>
     </section>
 
     <section id="contact">
@@ -137,6 +100,7 @@
       </div>
     </section>
     </div>
+    <script type="text/javascript" src="scripts/projectArticles.js"></script>
     <script type="text/javascript" src="scripts/templateView.js"></script>
     <script type="text/javascript" src="scripts/template.js"></script>
   </body>
