@@ -3,11 +3,12 @@
 var templateView = {};
 
 templateView.showTeaser = function() {
-  $('#projects article').children().filter('.l-copy-contain:nth-of-type(n+2)').hide();
+  $('article .l-copy-wrap').children().filter('.l-copy-contain:nth-of-type(n+2)').hide();
   $('article').on('click', '.reveal-btn', function(ev) {
     ev.preventDefault();
     console.log(this);
-    $(this).hide().parent().siblings().show();
+    $(this).parent().children().show();
+    $(this).hide();
   });
 };
 

@@ -41,6 +41,13 @@
   background-image: url("../images/profile-color.jpg");
 }
 
+
+#by-line, #publish-date {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 90%;
+}
+
 .btn-reveal {
   margin-right: 10px;
 }
@@ -98,6 +105,10 @@
 }
 
 @media only screen and (max-width: 560px) {
+  .l-copy-wrap {
+    width: 100%;
+  }
+
   .l-figure-contain {
     width: 100%;
   }
