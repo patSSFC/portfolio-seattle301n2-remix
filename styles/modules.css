@@ -8,10 +8,15 @@
   text-align: center;
 }
 
+.override {
+  padding: 0 !important;
+}
+
 .l-nav li {
   display: inline-block;
   font-size: 150%;
   margin: 0 3em;
+  list-style-type: none;
 }
 
 .l-nav li:hover {
@@ -57,15 +62,8 @@
   font-weight: 700;
 }
 
-.l-icon-contain {
-  text-align: center;
-  margin: 0 15px;
-  word-spacing: 40px;
-}
-
 .ion-navicon-round {
   float: right;
-  display: none;
 }
 
 .l-icon-contain a {
@@ -82,38 +80,4 @@
 
 .l-icon-contain #github:hover {
   color: #8E44AD;
-}
-
-/*
-***************MEDIA QUERIES*****************
-*/
-
-@media only screen and (max-width: 720px) {
-  .l-nav {
-    display: none;
-  }
-
-  .ion-navicon-round {
-    display: block;
-    clear: both;
-  }
-
-  .l-nav li {
-    display: block;
-    padding: 5px 0;
-  }
-}
-
-@media only screen and (max-width: 560px) {
-  .l-copy-wrap {
-    width: 100%;
-  }
-
-  .l-figure-contain {
-    width: 100%;
-  }
-
-  .l-copy-contain {
-    width: 100%;
-  }
 }

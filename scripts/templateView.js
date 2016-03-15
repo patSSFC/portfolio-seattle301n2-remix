@@ -1,5 +1,3 @@
-//Object array that holds functions for updating page and dynamic changes
-//But why do we need an array? Ask today during lab.
 var templateView = {};
 
 templateView.showTeaser = function() {
@@ -23,7 +21,8 @@ templateView.showTabs = function() {
   $target.find('li.tab a[href="#intro"]').click();
 };
 
-function showMenu() {
+templateView.showMenu = function() {
+  var $nav = $('.l-nav');
   $('.ion-navicon-round').on('click', function() {
       $('.l-nav').slideToggle();
   });
@@ -33,6 +32,11 @@ $(
   function() {
     templateView.showTabs();
     templateView.showTeaser();
-    showMenu();
+    templateView.showMenu();
+    window.onresize = function() {
+      if(window.innerWidth > 721) {
+        $('.l-nav').css('display', 'block');
+      }
+    };
   }
 );
