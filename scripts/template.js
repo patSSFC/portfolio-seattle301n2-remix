@@ -3,7 +3,6 @@ var projects = [];
 function Project(proj) {
   for (var prop in proj) {
     if(proj.hasOwnProperty(prop)) {
-      console.log(prop + ": " + proj[prop]);
       this[prop] = proj[prop];
     }
   }

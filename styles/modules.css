@@ -8,10 +8,15 @@
   text-align: center;
 }
 
+.override {
+  padding: 0 !important;
+}
+
 .l-nav li {
   display: inline-block;
   font-size: 150%;
   margin: 0 3em;
+  list-style-type: none;
 }
 
 .l-nav li:hover {
@@ -57,15 +62,8 @@
   font-weight: 700;
 }
 
-.l-icon-contain {
-  text-align: center;
-  margin: 0 15px;
-  word-spacing: 40px;
-}
-
 .ion-navicon-round {
   float: right;
-  display: none;
 }
 
 .l-icon-contain a {

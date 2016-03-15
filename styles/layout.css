@@ -26,8 +26,18 @@
   margin: 0;
 }
 
-.l-icon-contain {
+/*header .l-icon-contain {
   margin: 0 auto;
+}*/
+
+.l-icon-contain {
+  text-align: center;
+  margin: 0 15px;
+  word-spacing: 40px;
+}
+
+header .l-icon-contain {
+  display: none;
 }
 
 .push-left {
@@ -47,7 +57,7 @@
     display: none;
   }
 
-  .ion-navicon-round {
+  header .l-icon-contain {
     display: block;
     clear: both;
   }

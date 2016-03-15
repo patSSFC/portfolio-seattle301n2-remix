@@ -26,9 +26,6 @@ templateView.showMenu = function() {
   $('.ion-navicon-round').on('click', function() {
       $('.l-nav').slideToggle();
   });
-  if (winInnerWidth < 720) {
-
-  }
 };
 
 $(
@@ -36,5 +33,10 @@ $(
     templateView.showTabs();
     templateView.showTeaser();
     templateView.showMenu();
+    window.onresize = function() {
+      if(window.innerWidth > 721) {
+        $('.l-nav').css('display', 'block');
+      }
+    };
   }
 );
