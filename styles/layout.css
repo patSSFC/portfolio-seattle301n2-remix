@@ -4,6 +4,7 @@
 }
 
 .l-nav {
+  display: block;
   text-align: center;
   -webkit-padding-start: 0;
   border-top: 1px solid #F4D03F;
