@@ -24,7 +24,7 @@ templateView.showTabs = function() {
 templateView.showMenu = function() {
   var $nav = $('.l-nav');
   $('.ion-navicon-round').on('click', function() {
-      $('.l-nav').slideToggle();
+    $('.l-nav').slideToggle();
   });
 };
 
