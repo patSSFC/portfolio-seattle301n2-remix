@@ -1,14 +1,12 @@
 var projects = [];
 
 function Project(proj) {
-  this.title = proj.title,
-  this.category = proj.category,
-  this.author = proj.author,
-  this.screenshot = proj.screenshot,
-  this.projectUrl = proj.projectUrl,
-  this.authorUrl = proj.authorUrl,
-  this.publishedOn = proj.publishedOn,
-  this.body = proj.body
+  for (var prop in proj) {
+    if(proj.hasOwnProperty(prop)) {
+      console.log(prop + ": " + proj[prop]);
+      this[prop] = proj[prop];
+    }
+  }
 }
 
 Project.prototype.toHtml = function () {
