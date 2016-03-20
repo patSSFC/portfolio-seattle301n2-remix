@@ -1,4 +1,4 @@
-[
+var rawData = [
   {
     title: 'Travelling Fan',
     category: 'Sports',

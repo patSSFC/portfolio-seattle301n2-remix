@@ -31,9 +31,24 @@ Project.fetchAll = function () {
     console.log('yuuup!');
   } else {
     console.log('nope.');
-    $.getJSON('scripts/projectArticles.json', function(data) {
-      console.log('fire!');
-      localStorage.rawData = JSON.stringify(data);
+    $.getJSON('data/test.json')
+      .then( function(data) {
+        console.log('HERE');
+        data.each(function(article) {
+          console.log(article);
+        });
+        console.log(error);
+        localStorage.rawData = JSON.stringify(data);
+    })
+      .fail( function(data){
+        console.log(data);
+        console.log('fail');
     });
+    // $.ajax({url: 'data/projectArticles.json', success: function(data) {
+    //   $.each(console.log('Hello'));
+    //   // console.log('sup');
+    //   // localStorage.rawData = JSON.stringify(data);
+    // }});
+
   }
 };
