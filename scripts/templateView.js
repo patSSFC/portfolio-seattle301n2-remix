@@ -28,15 +28,18 @@ templateView.showMenu = function() {
   });
 };
 
-$(
-  function() {
-    templateView.showTabs();
-    templateView.showTeaser();
-    templateView.showMenu();
-    window.onresize = function() {
-      if(window.innerWidth > 721) {
-        $('.l-nav').css('display', 'block');
-      }
-    };
-  }
-);
+templateView.initIndexPage = function() {
+  projects.forEach(function(a){
+    $('#projects').append(a.toHtml());
+  });
+
+  templateView.showTabs();
+  templateView.showTeaser();
+  templateView.showMenu();
+  window.onresize = function() {
+    //Fixes hamburger resize bug
+    if(window.innerWidth > 721) {
+      $('.l-nav').css('display', 'block');
+    }
+  };
+};

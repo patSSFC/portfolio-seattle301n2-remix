@@ -16,14 +16,24 @@ Project.prototype.toHtml = function () {
   return template(this);
 };
 
-rawData.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+Project.loadAll = function(rawData) {
+  rawData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
 
-rawData.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
+  rawData.forEach(function(ele) {
+    projects.push(new Project(ele));
+  });
+};
 
-projects.forEach(function(a){
-  $('#projects').append(a.toHtml());
-});
+Project.fetchAll = function () {
+  if(localStorage.rawData) {
+    console.log('yuuup!');
+  } else {
+    console.log('nope.');
+    $.getJSON('scripts/projectArticles.json', function(data) {
+      console.log('fire!');
+      localStorage.rawData = JSON.stringify(data);
+    });
+  }
+};
