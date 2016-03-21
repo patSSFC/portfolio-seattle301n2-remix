@@ -17,6 +17,9 @@ Project.prototype.toHtml = function () {
 };
 
 Project.loadAll = function(rawData) {
+  // console.log('raw data ' + typeof(rawData));
+  // var x = JSON.parse(rawData);
+  // console.log(x);
   rawData.sort(function(a,b) {
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
   });
@@ -31,24 +34,26 @@ Project.fetchAll = function () {
     console.log('yuuup!');
   } else {
     console.log('nope.');
-    $.getJSON('data/test.json')
-      .then( function(data) {
-        console.log('HERE');
-        data.each(function(article) {
-          console.log(article);
-        });
-        console.log(error);
-        localStorage.rawData = JSON.stringify(data);
-    })
-      .fail( function(data){
-        console.log(data);
-        console.log('fail');
-    });
-    // $.ajax({url: 'data/projectArticles.json', success: function(data) {
-    //   $.each(console.log('Hello'));
-    //   // console.log('sup');
-    //   // localStorage.rawData = JSON.stringify(data);
-    // }});
+    // $.ajax({
+    //   url: 'scripts/projectArticles.js',
+    //   success: function(data) {
+    //     // console.log(typeof(data));
+    //     localStorage.rawData = JSON.parse(data);
+    //     console.log(typeof(localStorage.rawData));
+    //     // console.log(typeof(localStorage.rawData));
+    //     // console.log('Type of ' + typeof(localStorage.rawData));
+    //     Project.loadAll(localStorage.rawData);
+    //     templateView.initIndexPage();
+    //   }
+    // });
 
-  }
+    $.getJSON('../data/test.json', function( data ) {
+      localStorage.rawData = JSON.stringify(data);
+      Project.loadAll(
+        JSON.parse(localStorage.rawData)
+      );
+      templateView.initIndexPage();
+    });
+    // console.log('done!');
+  };
 };
