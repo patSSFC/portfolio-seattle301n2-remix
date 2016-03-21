@@ -24,20 +24,19 @@ Project.loadAll = function(rawData) {
   });
 };
 
-//TODO: Create functions to take out blocks of code. 
+//TODO: Create functions to take out blocks of code.
 Project.fetchAll = function () {
   // var xhr = new XMLHttpRequest();
   // console.log(xhr);
-  var eTag;
-  if(localStorage.rawData) {
+  $.ajax({
+    url: '../data/test.json',
+  })
+  .done(function(output, status, xhr){
+    localStorage.eTagNew = xhr.getResponseHeader('Last-Modified');
+  });
+  if(localStorage.rawData && localStorage.eTag === localStorage.eTagNew) {
     console.log('if!');
-    // TODO: Figure out logic for testing eTag
-    // $.ajax({
-    //   url: '../data/test.json',
-    //   ifModified: true
-    // }).then(function(data, status, xhr){
-    //   console.log(status);
-    // });
+    console.log('same old.');
     Project.loadAll(
       JSON.parse(localStorage.rawData)
     );
@@ -46,11 +45,14 @@ Project.fetchAll = function () {
     console.log('else');
     $.ajax({
       url: '../data/test.json',
-    }).done(function(output, status, xhr){
-      eTag = xhr.getResponseHeader('etag');
-      console.log(eTag);
+    })
+    .done(function(output, status, xhr){
+      // localStorage.setItem('eTag', xhr.getResponseHeader('etag'));
+      localStorage.eTag = xhr.getResponseHeader('Last-Modified');
+      console.log(localStorage.eTag);
     });
     $.getJSON('../data/test.json', function( data ) {
+      console.log('getting JSON...');
       localStorage.rawData = JSON.stringify(data);
       Project.loadAll(
         JSON.parse(localStorage.rawData)
