@@ -13,9 +13,10 @@
 }
 
 .l-nav li {
-  display: inline-block;
+  display: block;
+  width: 20%;
+  margin: 0 auto;
   font-size: 150%;
-  margin: 0 3em;
   list-style-type: none;
 }
 

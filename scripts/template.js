@@ -9,17 +9,12 @@ function Project(proj) {
 }
 
 Project.prototype.toHtml = function () {
-
   var $source = $('#projectTemplate').html();
   var template = Handlebars.compile($source);
-
   return template(this);
 };
 
 Project.loadAll = function(rawData) {
-  // console.log('raw data ' + typeof(rawData));
-  // var x = JSON.parse(rawData);
-  // console.log(x);
   rawData.sort(function(a,b) {
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
   });
@@ -29,24 +24,32 @@ Project.loadAll = function(rawData) {
   });
 };
 
+//TODO: Create functions to take out blocks of code. 
 Project.fetchAll = function () {
+  // var xhr = new XMLHttpRequest();
+  // console.log(xhr);
+  var eTag;
   if(localStorage.rawData) {
-    console.log('yuuup!');
-  } else {
-    console.log('nope.');
+    console.log('if!');
+    // TODO: Figure out logic for testing eTag
     // $.ajax({
-    //   url: 'scripts/projectArticles.js',
-    //   success: function(data) {
-    //     // console.log(typeof(data));
-    //     localStorage.rawData = JSON.parse(data);
-    //     console.log(typeof(localStorage.rawData));
-    //     // console.log(typeof(localStorage.rawData));
-    //     // console.log('Type of ' + typeof(localStorage.rawData));
-    //     Project.loadAll(localStorage.rawData);
-    //     templateView.initIndexPage();
-    //   }
+    //   url: '../data/test.json',
+    //   ifModified: true
+    // }).then(function(data, status, xhr){
+    //   console.log(status);
     // });
-
+    Project.loadAll(
+      JSON.parse(localStorage.rawData)
+    );
+    templateView.initIndexPage();
+  } else {
+    console.log('else');
+    $.ajax({
+      url: '../data/test.json',
+    }).done(function(output, status, xhr){
+      eTag = xhr.getResponseHeader('etag');
+      console.log(eTag);
+    });
     $.getJSON('../data/test.json', function( data ) {
       localStorage.rawData = JSON.stringify(data);
       Project.loadAll(
@@ -54,6 +57,5 @@ Project.fetchAll = function () {
       );
       templateView.initIndexPage();
     });
-    // console.log('done!');
   };
 };
