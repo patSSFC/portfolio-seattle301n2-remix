@@ -24,32 +24,29 @@ Project.loadAll = function(rawData) {
   });
 };
 
-//TODO: Create functions to take out blocks of code.
+//TODO: Create functions to take out blocks of code,
+//particularly the $.ajax blocks that check xhr
 Project.fetchAll = function () {
-  // var xhr = new XMLHttpRequest();
-  // console.log(xhr);
   $.ajax({
     url: '../data/test.json',
   })
   .done(function(output, status, xhr){
-    localStorage.eTagNew = xhr.getResponseHeader('Last-Modified');
+    localStorage.lastModNew = xhr.getResponseHeader('Last-Modified');
   });
-  if(localStorage.rawData && localStorage.eTag === localStorage.eTagNew) {
-    console.log('if!');
-    console.log('same old.');
+  if(localStorage.rawData && localStorage.lastMod === localStorage.lastModNew) {
+    console.log('same old data.');
     Project.loadAll(
       JSON.parse(localStorage.rawData)
     );
     templateView.initIndexPage();
   } else {
-    console.log('else');
+    console.log('making new request...');
     $.ajax({
       url: '../data/test.json',
     })
     .done(function(output, status, xhr){
       // localStorage.setItem('eTag', xhr.getResponseHeader('etag'));
-      localStorage.eTag = xhr.getResponseHeader('Last-Modified');
-      console.log(localStorage.eTag);
+      localStorage.lastMod = xhr.getResponseHeader('Last-Modified');
     });
     $.getJSON('../data/test.json', function( data ) {
       console.log('getting JSON...');
