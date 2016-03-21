@@ -56,4 +56,4 @@
     publishedOn: '1946-10-5',
     body: '<p class="l-copy-contain push-right">This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  Its even responsive! Click on the screenshot and check it out for yourself!</p><p class="l-copy-contain push-right">This project is the splash page for a itinerary creator for sports fans who want to travel to watch their team play.  As you can see, my column skills are on point.  Its even responsive! Click on the screenshot and check it out for yourself!</p>'
   }
-]
+];
