@@ -30,11 +30,17 @@
     });
   };
 
+  templateView.stats = function() {
+    $('#project-count').html(Project.projects.length);
+    $('#word-count').html(Project.numWordsAll());
+  };
+
   templateView.initIndexPage = function() {
     Project.projects.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
 
+    templateView.stats();
     templateView.showTabs();
     templateView.showTeaser();
     templateView.showMenu();

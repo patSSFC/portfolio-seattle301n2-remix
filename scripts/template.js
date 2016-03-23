@@ -28,6 +28,16 @@
     });
   };
 
+  Project.numWordsAll = function() {
+    return Project.projects.map(function(proj) {
+      // Get the total number of words in this article
+      return proj.body.split(' ').length;
+    })
+    .reduce(function(a, b) {
+      return a + b;
+    });
+  };
+
   //TODO: Create functions to take out blocks of code,
   //particularly the $.ajax blocks that check xhr
   Project.fetchAll = function () {
@@ -62,5 +72,6 @@
       });
     };
   };
+
   module.Project = Project;
 })(window);
