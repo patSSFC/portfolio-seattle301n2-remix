@@ -13,6 +13,7 @@
     <!-- External Libs -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 
 
     <!-- External Fonts/Icons -->
@@ -66,14 +67,14 @@
         </div>
         <nav class="l-nav">
           <ul class="override">
-            <li class="tab"><a href="#intro">Intro</a></li>
-            <li class="tab"><a href="#projects">Projects</a></li>
-            <li class="tab"><a href="#contact">Contact</a></li>
+            <li class="tab"><a href="/">Intro</a></li>
+            <li class="tab"><a href="/projects">Projects</a></li>
+            <li class="tab"><a href="/contact">Contact</a></li>
           </ul>
         </nav>
       </header>
 
-      <section id="intro">
+      <section id="intro" class="tab-content">
         <div class="intro-contain clearfix">
           <h2>
             Pay Your Dues. <br> Nothing is given, Everything is earned
@@ -93,7 +94,7 @@
         </div>
       </section>
 
-    <section id="projects">
+    <section id="projects" class="tab-content">
       <div id="stats">
         <dl id="stat-contain">
           <dt> Total Projects : </dt>
@@ -104,7 +105,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="tab-content">
       <h2>Get at me!</h2>
       <div class="l-icon-contain">
         <a id="facebook" href="https://www.facebook.com/people/Pat-Rick/694183141" target="_blank"><span class="ion-social-facebook"
@@ -119,8 +120,12 @@
     <script type="text/javascript" src="scripts/projectArticles.js"></script>
     <script type="text/javascript" src="scripts/templateView.js"></script>
     <script type="text/javascript" src="scripts/template.js"></script>
+    <script src="scripts/introController.js"></script>
+    <script src="scripts/projectsController.js"></script>
+    <script src="scripts/contactController.js"></script>
+    <script src="scripts/routes.js"></script>
     <script type="text/javascript">
-      Project.fetchAll();
+      // Project.fetchAll(templateView.initIndexPage);
     </script>
   </body>
 </html>

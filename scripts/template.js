@@ -20,9 +20,7 @@
       return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
     });
 
-    // rawData.forEach(function(ele) {
-    //   Project.projects.push(new Project(ele));
-    // });
+
     Project.projects = rawData.map(function(p) {
       return new Project(p);
     });
@@ -40,7 +38,7 @@
 
   //TODO: Create functions to take out blocks of code,
   //particularly the $.ajax blocks that check xhr
-  Project.fetchAll = function () {
+  Project.fetchAll = function (next) {
     $.ajax({
       url: '../data/test.json',
     })
@@ -52,7 +50,6 @@
       Project.loadAll(
         JSON.parse(localStorage.rawData)
       );
-      templateView.initIndexPage();
     } else {
       console.log('making new request...');
       $.ajax({
@@ -68,9 +65,9 @@
         Project.loadAll(
           JSON.parse(localStorage.rawData)
         );
-        templateView.initIndexPage();
       });
     };
+    next();
   };
 
   module.Project = Project;

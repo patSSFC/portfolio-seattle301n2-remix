@@ -13,14 +13,14 @@
   };
 
   templateView.showTabs = function() {
-    var $target = $('ul');
-    $target.on('click', '.tab', function(ev){
-      ev.preventDefault();
-      $clickTarget = $(ev.target).attr('href');
-      $('section').hide();
-      $($clickTarget).fadeIn(700);
-    });
-    $target.find('li.tab a[href="#intro"]').click();
+    // var $target = $('ul');
+    // $target.on('click', '.tab', function(ev){
+    //   ev.preventDefault();
+    //   $clickTarget = $(ev.target).attr('href');
+    //   $('section').hide();
+    //   $($clickTarget).fadeIn(700);
+    // });
+    // $target.find('li.tab a[href="#intro"]').click();
   };
 
   templateView.showMenu = function() {
