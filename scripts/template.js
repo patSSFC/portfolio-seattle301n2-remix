@@ -38,13 +38,30 @@
 
   //TODO: Create functions to take out blocks of code,
   //particularly the $.ajax blocks that check xhr
-  Project.fetchAll = function (next) {
+
+  Project.getXhr = function(path, localVar) {
     $.ajax({
-      url: '../data/test.json',
+      // url: '../data/test.json',
+      url: path,
     })
     .done(function(output, status, xhr){
-      localStorage.lastModNew = xhr.getResponseHeader('Last-Modified');
+      // localStorage.localVar = xhr.getResponseHeader('Last-Modified');
+      console.log('inside done' + localVar);
+      localStorage.setItem(localVar, xhr.getResponseHeader('Last-Modified'));
     });
+  };
+
+  Project.fetchAll = function (next) {
+    // $.ajax({
+    //   url: '../data/test.json',
+    // })
+    // .done(function(output, status, xhr){
+    //   localStorage.lastModNew = xhr.getResponseHeader('Last-Modified');
+    // });
+    // localStorage.lastModNew = '';
+    var lastModNew = 'lastModNew';
+    var lastMod = 'lastMod';
+    Project.getXhr('../data/test.json', lastModNew);
     if(localStorage.rawData && localStorage.lastMod === localStorage.lastModNew) {
       console.log('same old data.');
       Project.loadAll(
@@ -52,13 +69,14 @@
       );
     } else {
       console.log('making new request...');
-      $.ajax({
-        url: '../data/test.json',
-      })
-      .done(function(output, status, xhr){
-        // localStorage.setItem('eTag', xhr.getResponseHeader('etag'));
-        localStorage.lastMod = xhr.getResponseHeader('Last-Modified');
-      });
+      // $.ajax({
+      //   url: '../data/test.json',
+      // })
+      // .done(function(output, status, xhr){
+      //   // localStorage.setItem('eTag', xhr.getResponseHeader('etag'));
+      //   localStorage.lastMod = xhr.getResponseHeader('Last-Modified');
+      // });
+      Project.getXhr('../data/test.json', lastMod);
       $.getJSON('../data/test.json', function( data ) {
         console.log('getting JSON...');
         localStorage.rawData = JSON.stringify(data);

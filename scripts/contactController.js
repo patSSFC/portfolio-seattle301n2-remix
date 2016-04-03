@@ -7,4 +7,6 @@
     $target.filter('#contact').fadeIn();
   };
 
+  module.contactController = contactController;
+
 }(window));
