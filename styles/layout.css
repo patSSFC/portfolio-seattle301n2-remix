@@ -59,7 +59,7 @@ header .l-icon-contain {
   }
 
   .l-nav li {
-    display: block;
+    /*display: block;*/
     padding: 5px 0;
   }
 }
@@ -75,5 +75,11 @@ header .l-icon-contain {
 
   .l-copy-contain {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .l-nav li {
+    display: block;
   }
 }
