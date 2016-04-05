@@ -40,6 +40,15 @@
       </article>
     </script>
 
+    <script id="repoTemplate" type="text/x-handlebars-template">
+      <article class="repo">
+        <h2>{{name}}</h2>
+        <ul>
+          <li></li>
+        </ul>
+      </article>
+    </script>
+
     <!-- <script id="statTemplate" type="text/x-handlebars-template">
       <div id="stats">
         <dl id="stat-contain">
@@ -105,6 +114,10 @@
       </div>
     </section>
 
+    <section id="repos">
+
+    </section>
+
     <section id="contact" class="tab-content">
       <h2>Get at me!</h2>
       <div class="l-icon-contain">
@@ -124,5 +137,10 @@
     <script src="scripts/projectsController.js"></script>
     <script src="scripts/contactController.js"></script>
     <script src="scripts/routes.js"></script>
+    <script src="scripts/gitToken.js"></script>
+    <script src="scripts/repoRequest.js"></script>
+    <script type="text/javascript">
+      repo.requestRepos();
+    </script>
   </body>
 </html>
