@@ -3,7 +3,7 @@
 
   repo.all = [];
 
-  repo.requestRepos = function() {
+  repo.requestRepos = function(callback) {
     $.ajax({
       url: 'https://api.github.com/users/patSSFC/repos',
       headers: {
@@ -12,9 +12,11 @@
       success: function(data, message, xhr) {
         localStorage.data = data;
         repo.all = data;
-        repo.all.forEach(function(r){
-          $('#repos').append(repo.toHtml(r));
-        });
+        // repo.all.forEach(function(r){
+        //   $('#repos').append(repo.toHtml(r));
+        // });
+        // repo.initPage();
+        callback();
       }
     });
   };
@@ -26,12 +28,9 @@
   };
 
   repo.initPage = function() {
-    console.log('inside initPage ' + repo.all);
-    repo.all.forEach = function(r) {
-      console.log('inside loop');
-      console.log(r);
+    repo.all.forEach(function(r) {
       $('#repos').append(repo.toHtml(r));
-    };
+    });
   };
 
   // repo.showRepos = function() {
