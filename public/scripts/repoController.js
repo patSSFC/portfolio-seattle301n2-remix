@@ -2,7 +2,7 @@
   var repoController = {};
 
   repoController.showRepos = function() {
-    $target = $('');
+    // $target = $('');
   };
 
   this.repoController = repoController;
