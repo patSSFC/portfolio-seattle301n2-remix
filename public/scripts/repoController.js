@@ -6,5 +6,5 @@
     $target.hide().filter('#repos').show();
   };
 
-  this.repoController = repoController;
+  module.repoController = repoController;
 })(window);
