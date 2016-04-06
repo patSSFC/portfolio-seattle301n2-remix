@@ -10,12 +10,9 @@
         'Authorization': authToken,
       },
       success: function(data, message, xhr) {
-        // console.log(data);
-        console.log('yo!');
         localStorage.data = data;
         repo.all = data;
         repo.all.forEach(function(r){
-          console.log(r);
           $('#repos').append(repo.toHtml(r));
         });
       }
