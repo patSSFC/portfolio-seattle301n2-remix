@@ -2,6 +2,7 @@
   var repoController = {};
 
   repo.requestRepos(repo.initPage);
+
   repoController.showRepos = function() {
     $target = $('.tab-content');
     $target.hide().filter('#repos').show();
@@ -11,5 +12,5 @@
 
   };
 
-  module.repoController = repoController;
+  this.repoController = repoController;
 })(window);
