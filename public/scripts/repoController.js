@@ -2,7 +2,8 @@
   var repoController = {};
 
   repoController.showRepos = function() {
-    // $target = $('');
+    $target = $('.tab-content');
+    $target.hide().filter('#repos').show();
   };
 
   this.repoController = repoController;
