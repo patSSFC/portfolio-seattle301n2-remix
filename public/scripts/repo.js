@@ -4,14 +4,12 @@
   repo.all = [];
 
   repo.requestRepos = function(callback) {
-    console.log(authToken);
     $.ajax({
       url: 'https://api.github.com/users/patSSFC/repos',
       headers: {
         'Authorization': authToken,
       },
       success: function(data, message, xhr) {
-        localStorage.data = data;
         repo.all = data;
         callback();
       }
