@@ -9,7 +9,6 @@
 
   repoController.showTeaser = function() {
     $target = $('article.repo');
-    console.log($target);
     console.log($target.filter('.repo-details'));
     $target.filter('.repo-details').slideUp();
     $target.on('click', 'h2.repo-name', function() {
