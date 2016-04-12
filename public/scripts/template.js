@@ -12,6 +12,7 @@
   Project.prototype.toHtml = function () {
     var $source = $('#projectTemplate').html();
     var template = Handlebars.compile($source);
+    // console.log(this);
     return template(this);
   };
 

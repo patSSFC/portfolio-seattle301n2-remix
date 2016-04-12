@@ -7,8 +7,9 @@
     <!-- Stylesheets -->
     <link type="text/css" rel="stylesheet" href="styles/normalize.css/normalize.css">
     <link type="text/css" rel="stylesheet" href="styles/base.css">
-    <link type="text/css" rel="stylesheet" href="styles/layout.css">
     <link type="text/css" rel="stylesheet" href="styles/modules.css">
+    <link type="text/css" rel="stylesheet" href="styles/layout.css">
+    <!-- <link type="text/css" rel="stylesheet" href="styles/modules.css"> -->
 
     <!-- External Libs -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -37,6 +38,19 @@
           {{{body}}}
           <a href="#" class="reveal-btn">Read on!</a>
         </div>
+      </article>
+    </script>
+
+    <script id="repoTemplate" type="text/x-handlebars-template">
+      <article class="repo">
+        <h2 class="repo-name">{{name}}</h2>
+        <ul class="repo-details">
+          <li>{{owner.id}}</li>
+          <li>{{created_at}}</li>
+          <li>{{updated_at}}</li>
+          <li>{{language}}</li>
+          <li>{{description}}</li>
+        </ul>
       </article>
     </script>
 
@@ -69,6 +83,7 @@
           <ul class="override">
             <li class="tab"><a href="/">Intro</a></li>
             <li class="tab"><a href="/projects">Projects</a></li>
+            <li class="tab"><a href="/repos">Repos</a></li>
             <li class="tab"><a href="/contact">Contact</a></li>
           </ul>
         </nav>
@@ -105,6 +120,18 @@
       </div>
     </section>
 
+    <section id="repos" class="tab-content">
+      <!-- <article class="repo">
+        <h2 id="repo-name">TEST</h2>
+        <ul>
+          <li>test</li>
+          <li>test</li>
+          <li>test</li>
+          <li>test</li>
+        </ul>
+      </article> -->
+    </section>
+
     <section id="contact" class="tab-content">
       <h2>Get at me!</h2>
       <div class="l-icon-contain">
@@ -123,6 +150,19 @@
     <script src="scripts/introController.js"></script>
     <script src="scripts/projectsController.js"></script>
     <script src="scripts/contactController.js"></script>
+    <script src="scripts/gitToken.js"></script>
+    <script src="scripts/repo.js"></script>
+    <script src="scripts/repoController.js"></script>
     <script src="scripts/routes.js"></script>
+    <!-- <script src="scripts/gitToken.js"></script> -->
+    <!-- <script src="scripts/repo.js"></script> -->
+    <script type="text/javascript">
+      // repo.requestRepos();
+      // console.log($('article.repo'));
+      // $('article.repo').on('click', 'h2', function() {
+      //   console.log(this);
+      //   $(this).siblings().fadeToggle();
+      // });
+    </script>
   </body>
 </html>

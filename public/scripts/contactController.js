@@ -1,5 +1,5 @@
 (function(module) {
-  contactController = {};
+  var contactController = {};
 
   contactController.showContact = function() {
     $target = $('.tab-content');

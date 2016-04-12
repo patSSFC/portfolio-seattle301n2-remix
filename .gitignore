@@ -1,2 +1,4 @@
 .bash_profile
 node_modules/
+.DS_Store
+public/scripts/gitToken.js
