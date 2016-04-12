@@ -28,7 +28,8 @@
     repo.all.forEach(function(r) {
       $('#repos').append(repo.toHtml(r));
     });
+    $('.repo-details').hide();
   };
-  
+
   this.repo = repo;
 })(window);
