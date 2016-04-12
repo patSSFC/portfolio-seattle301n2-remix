@@ -13,10 +13,6 @@
       success: function(data, message, xhr) {
         localStorage.data = data;
         repo.all = data;
-        // repo.all.forEach(function(r){
-        //   $('#repos').append(repo.toHtml(r));
-        // });
-        // repo.initPage();
         callback();
       }
     });
@@ -33,12 +29,6 @@
       $('#repos').append(repo.toHtml(r));
     });
   };
-
-  // repo.showRepos = function() {
-  //   repo.all.forEach = function(r) {
-  //     console.log(r.language);
-  //   };
-  // };
-
+  
   this.repo = repo;
 })(window);

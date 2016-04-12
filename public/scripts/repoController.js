@@ -8,10 +8,9 @@
   };
 
   repoController.showTeaser = function() {
-    $target = $('article.repo');
-    console.log($target.filter('.repo-details'));
-    $target.filter('.repo-details').slideUp();
-    $target.on('click', 'h2.repo-name', function() {
+    console.log($('#repos').find('.repo').children());
+
+    $('#repos').on('click', '.repo-name', function() {
       $(this).siblings().slideToggle();
     });
   };
