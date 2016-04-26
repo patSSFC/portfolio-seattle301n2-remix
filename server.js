@@ -24,14 +24,27 @@
 //   console.log('Server started on port ' + port + '!');
 // });
 var express = require('express');
+var requestProxy = require('express-request-proxy');
 var app = express();
 var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
+
+var proxyGitHub = function(request, response) {
+  // request.params[0]= 'users/patSSFC/repos';
+  console.log('Routing GitHub request for', request.params[0]);
+  (requestProxy({
+    url: 'https://api.github.com/' + request.params[0],
+    headers: { Authorization: 'token ' + process.env.GIT_HUB_TOKEN }
+  }))(request, response);
+};
+
+app.get('/github/*', proxyGitHub);
 app.get('/', function(req,res) {
   console.log(req.body);
   response.sendFile(__dirname + '/public/index.html');
 });
+
 app.listen(port, function() {
   console.log('Server running on...' + port);
 });
