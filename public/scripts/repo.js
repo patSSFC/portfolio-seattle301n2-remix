@@ -7,7 +7,7 @@
     $.ajax({
       url: 'https://api.github.com/users/patSSFC/repos',
       headers: {
-        'Authorization': authToken,
+        'Authorization': process.env.GIT_HUB_TOKEN,
       },
       success: function(data, message, xhr) {
         repo.all = data;
