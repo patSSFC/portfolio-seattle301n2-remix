@@ -3,7 +3,7 @@
 
   repo.all = [];
 
-  repo.requestRepos = function(callback) {
+  repo.requestRepos = function(ctx, next) {
     $.ajax({
       url: 'https://api.github.com/users/patSSFC/repos',
       headers: {
@@ -11,7 +11,7 @@
       },
       success: function(data, message, xhr) {
         repo.all = data;
-        callback();
+        next();
       }
     });
   };

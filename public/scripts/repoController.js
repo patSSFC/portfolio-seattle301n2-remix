@@ -1,11 +1,13 @@
 (function(module) {
   var repoController = {};
 
-  repoController.showRepos = function() {
-    repo.requestRepos(repo.initPage);
+  repoController.showRepos = function(ctx, next) {
+    // repo.requestRepos(repo.initPage);
+    next();
     $target = $('.tab-content');
     $target.hide().filter('#repos').show();
     $('#repos').empty();
+    repoController.showTeaser();
   };
 
   repoController.showTeaser = function() {
@@ -14,7 +16,7 @@
     });
   };
 
-  repoController.showTeaser();
+  // repoController.showTeaser();
 
   module.repoController = repoController;
 })(window);
