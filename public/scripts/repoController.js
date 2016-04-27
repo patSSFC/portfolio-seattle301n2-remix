@@ -7,6 +7,7 @@
     $target = $('.tab-content');
     $target.hide().filter('#repos').show();
     $('#repos').empty();
+    repoController.showTeaser();
   };
 
   repoController.showTeaser = function() {
@@ -15,7 +16,7 @@
     });
   };
 
-  repoController.showTeaser();
+  // repoController.showTeaser();
 
   module.repoController = repoController;
 })(window);
